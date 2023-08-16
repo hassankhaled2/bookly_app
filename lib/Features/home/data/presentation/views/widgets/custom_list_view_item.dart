@@ -12,7 +12,7 @@ class CustomListViewList extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height *.23,
       child: AspectRatio(
-        aspectRatio: 2.8/4,
+        aspectRatio: 2.7/4,
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
