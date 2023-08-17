@@ -13,10 +13,29 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(children: [
      CustomAppBar(),
-      CustomListViewList()
-
+      FeaturedBooksListView()
     ],);
   }
 }
+class FeaturedBooksListView extends StatelessWidget {
+  const FeaturedBooksListView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height*.3,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+          itemBuilder: (context,index)
+      {
+        return const Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 5),
+          child:  FeaturedListViewList(),
+        );
+      }),
+    );
+  }
+}
+
 
 
