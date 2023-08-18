@@ -12,3 +12,4 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+

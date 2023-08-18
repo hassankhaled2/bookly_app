@@ -22,7 +22,8 @@ class HomeViewBody extends StatelessWidget {
        CustomAppBar(),
         FeaturedBooksListView(),
         const SizedBox(height: 50,),
-        Text('Best Seller',style:Styles.titleMedium,)
+        Text('Best Seller',style:Styles.titleMedium,),
+            BestSellerListViewItem()
       ]
       ),
     );
@@ -32,3 +33,37 @@ class HomeViewBody extends StatelessWidget {
 
 
 
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 130,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5/4,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+
+                  color: Colors.greenAccent,
+
+                  image:const DecorationImage(
+                      image:AssetImage(AssetsData.testImage,),
+                      fit: BoxFit.fill
+                  )
+              ),
+            ),
+          ),
+          Column(
+            children: [
+
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
