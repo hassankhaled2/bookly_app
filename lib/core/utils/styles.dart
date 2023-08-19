@@ -17,7 +17,6 @@ static const textStyle18 =TextStyle(
 static const textStyle20 =TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.normal,
-    fontFamily: KGTSectraFine
 );
 static const textStyle30 =TextStyle(
         fontSize: 30,
