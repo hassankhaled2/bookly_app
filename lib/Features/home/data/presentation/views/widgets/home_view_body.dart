@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,14 +16,14 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
        CustomAppBar(),
         FeaturedBooksListView(),
-        const SizedBox(height: 50,),
-        Text('Best Seller',style:Styles.titleMedium,),
+         SizedBox(height: 50,),
+        Text('Best Seller',style:Styles.textStyle18,),
             BestSellerListViewItem()
       ]
       ),
