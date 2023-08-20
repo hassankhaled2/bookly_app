@@ -24,5 +24,9 @@ static const textStyle30 =TextStyle(
         fontFamily: KGTSectraFine
     );
 
-
+    static const textStyle16 =TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500
+        ,
+    );
 }
