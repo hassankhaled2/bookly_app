@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/data/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_app/Features/home/data/presentation/views/widgets/featured_list_view.dart';
 import 'package:bookly_app/core/utils/styles.dart';
@@ -28,7 +29,9 @@ class BookDetailsViewBody extends StatelessWidget {
               fontWeight:FontWeight.w400
           ),),
           SizedBox(height: 6,),
-          Opacity(opacity:.8,child: Text('Rudyard Kipling',style: Styles.textStyle18.copyWith(fontStyle:FontStyle.italic,fontWeight:FontWeight.w500),))
+          Opacity(opacity:.8,child: Text('Rudyard Kipling',style: Styles.textStyle18.copyWith(fontStyle:FontStyle.italic,fontWeight:FontWeight.w500),)),
+          const SizedBox(height: 18,),
+          BookingRating(mainAxisAlignment: MainAxisAlignment.center,)
         ],
       ),
     );
