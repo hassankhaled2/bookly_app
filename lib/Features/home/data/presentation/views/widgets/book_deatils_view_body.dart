@@ -1,11 +1,10 @@
 import 'package:bookly_app/Features/home/data/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/data/presentation/views/widgets/custom_book_image.dart';
-import 'package:bookly_app/Features/home/data/presentation/views/widgets/featured_list_view.dart';
+import 'package:bookly_app/Features/home/data/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/widgets/custom_button.dart';
 import 'books_actions.dart';
 import 'custom_book_details_app_bar.dart';
 
@@ -20,26 +19,36 @@ class BookDetailsViewBody extends StatelessWidget {
       child: Column(
         children:
         [
-          CustomBookDetailsAppBar(),
+          const CustomBookDetailsAppBar(),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: width*.2),
-            child: CustomBookImage(),
+            child: const CustomBookImage(),
 
           ),
-          SizedBox(height: 43,),
+          const SizedBox(height: 15,),
           Text('The Jungle Book',style: Styles.textStyle30.copyWith(
               fontWeight:FontWeight.w400
           ),),
-          SizedBox(height: 6,),
+          const SizedBox(height: 6,),
           Opacity(opacity:.8,child: Text('Rudyard Kipling',style: Styles.textStyle18.copyWith(fontStyle:FontStyle.italic,fontWeight:FontWeight.w500),)),
-          const SizedBox(height: 18,),
-          BookingRating(mainAxisAlignment: MainAxisAlignment.center,),
-          SizedBox(height: 37,),
-          BooksActions()
-
+          const SizedBox(height: 15,),
+          const BookingRating(mainAxisAlignment: MainAxisAlignment.center,),
+          const SizedBox(height: 16,),
+          const BooksActions(),
+          const SizedBox(height: 20,),
+          Align(
+              alignment:Alignment.centerLeft,
+            child: Text('You can also like',style:Styles.textStyle16.copyWith(
+              fontWeight:FontWeight.w600
+            ),),
+          ),
+          const SizedBox(height: 15,),
+          const SimilarBooksListView(),
+          const SizedBox(height: 10,),
         ],
       ),
     );
   }
 }
+
 
