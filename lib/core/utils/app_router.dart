@@ -18,10 +18,7 @@ abstract class AppRouter
         path: '/',
         builder: (BuildContext context, GoRouterState state) =>const SplashView(),
       ),
-      GoRoute(
-        path:kSearchView,
-        builder: (BuildContext context, GoRouterState state) =>const SearchView(),
-      ),
+
       GoRoute(
         path:kHomeView,
         builder: (BuildContext context, GoRouterState state) =>const HomeView(),
@@ -29,6 +26,10 @@ abstract class AppRouter
       GoRoute(
         path:kBookDetailsView,
         builder: (BuildContext context, GoRouterState state) =>const BookDetailsViews(),
+      ),
+      GoRoute(
+        path:kSearchView,
+        builder: (BuildContext context, GoRouterState state) =>const SearchView(),
       ),
 
     ],
