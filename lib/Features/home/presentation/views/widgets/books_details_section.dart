@@ -1,6 +1,6 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'books_actions.dart';
 import 'custom_book_image.dart';
