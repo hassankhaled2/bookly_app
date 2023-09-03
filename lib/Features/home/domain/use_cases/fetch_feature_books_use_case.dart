@@ -7,6 +7,7 @@ import '../entites/book_entity.dart';
 
 class FetchFeatureBooksUseCase extends UseCase<List<BookEntity>,NoParam>
 {
+  //ممكن تشيل class Noparam و تستخدم كلمه void
   final HomeRepo homeRepo;
 
   FetchFeatureBooksUseCase(this.homeRepo);
