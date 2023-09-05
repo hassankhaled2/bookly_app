@@ -22,24 +22,24 @@ final ApiService apiService;
   Future<List<BookEntity>> fetchFeaturedBooks() async
   {
    var data= await apiService.get(endpoint: 'volumes?Filtering=free-ebooks&q=programming');
-   //data
+   // var -->map list of string and dynamic
    List<BookEntity> books = getBooksList(data);
  return books;
   }
 
-  List<BookEntity> getBooksList(Map<String, dynamic> data) {
-    List<BookEntity> books =[];
-    for(var bookMap in data['items'])
-    {
-      books.add(BookModel.fromJson(bookMap));
-    }
+  @override
+  Future<List<BookEntity>> fetchNewsBooks() async{
+    var data= await apiService.get(endpoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
+    // var -->map list of string and dynamic
+    List<BookEntity> books = getBooksList(data);
     return books;
   }
-
-  @override
-  Future<List<BookEntity>> fetchNewsBooks() {
-    // TODO: implement fetchNewsBooks
-    throw UnimplementedError();
+List<BookEntity> getBooksList(Map<String, dynamic> data) {
+  List<BookEntity> books =[];
+  for(var bookMap in data['items'])
+  {
+    books.add(BookModel.fromJson(bookMap));
   }
-
+  return books;
+}
 }
