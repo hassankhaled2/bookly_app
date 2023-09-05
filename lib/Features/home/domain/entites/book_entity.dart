@@ -13,5 +13,6 @@ class BookEntity
       required this.authorName,
       required this.price,
      required this.rating,
-      required this.bookId});
+      required this.bookId}
+      );
 }
