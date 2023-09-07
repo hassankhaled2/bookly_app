@@ -9,7 +9,7 @@ abstract class HomeLocalDataSource
   List<BookEntity>fetchFeaturedBooks();
   // عملت Return ل class failure
 
-  Future<List<BookEntity>>fetchNewsBooks();
+  List<BookEntity>fetchNewsBooks();
 }
 class HomeDataSourceImpl extends HomeLocalDataSource
 {
@@ -20,9 +20,9 @@ class HomeDataSourceImpl extends HomeLocalDataSource
   }
 
   @override
-  Future<List<BookEntity>> fetchNewsBooks() {
-    // TODO: implement fetchNewsBooks
-    throw UnimplementedError();
+  List<BookEntity> fetchNewsBooks() {
+    var box =Hive.box<BookEntity>(KNewestBox);
+    return box.values.toList();
   }
 
 }
