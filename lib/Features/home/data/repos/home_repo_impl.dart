@@ -4,6 +4,7 @@ import 'package:bookly_app/Features/home/domain/entites/book_entity.dart';
 import 'package:bookly_app/Features/home/domain/repos/home_repo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo
 {
@@ -24,7 +25,16 @@ class HomeRepoImpl extends HomeRepo
       return right(books);
     } catch(e)
     {
-      return left(Failure());
+      if (e is DioError) {
+        return left(
+          ServerFailure.fromDiorError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 
@@ -32,16 +42,26 @@ class HomeRepoImpl extends HomeRepo
   Future<Either<Failure, List<BookEntity>>> fetchNewsBooks() async {
     try
     {
-      var bookslist =await homeLocalDataSource.fetchNewsBooks();
-      if(bookslist.isNotEmpty)
+      List<BookEntity> books;
+       books=await homeLocalDataSource.fetchNewsBooks();
+      if(books.isNotEmpty)
       {
-        return right(bookslist);
+        return right(books);
       }
-      var books =await homeLocalDataSource.fetchNewsBooks();
+       books =await homeLocalDataSource.fetchNewsBooks();
       return right(books);
     } catch(e)
     {
-      return left(Failure());
+      if (e is DioError) {
+        return left(
+          ServerFailure.fromDiorError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 
