@@ -3,7 +3,7 @@ import 'package:bookly_app/Features/home/domain/use_cases/fetch_news_books_use_c
 import 'package:meta/meta.dart';
 
 import '../../../domain/entites/book_entity.dart';
-import '../../../domain/use_cases/fetch_feature_books_use_case.dart';
+
 
 part 'newest_books_state.dart';
 
