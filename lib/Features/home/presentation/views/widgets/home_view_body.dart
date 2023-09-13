@@ -9,6 +9,7 @@ import 'best_seller_list_view.dart';
 import 'best_seller_list_view_item.dart';
 import 'custom_app_bar.dart';
 import 'custom_book_image.dart';
+import 'featured_books_list_view_bloc_builder.dart';
 import 'featured_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -23,33 +24,33 @@ class HomeViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
                   child: CustomAppBar(),
                 ),
-                FeaturedBooksListView(),
-                SizedBox(height: 50,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text('Best Seller',style:Styles.textStyle18,),
+                FeaturedBooksListViewBlocBuilder(),
+                const SizedBox(height: 50,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Text('Best Seller', style: Styles.textStyle18,),
                 ),
                 SizedBox(height: 20,),
 
               ]
           ),
         ),
- SliverFillRemaining(
-   child: Padding(
-     padding: const EdgeInsets.symmetric(
-         horizontal: 30),
-     child: BestSellerListView(),
-   ),
- )
+        SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: 30),
+            child: BestSellerListView(),
+          ),
+        )
       ],
     );
-
   }
 }
+
 
 
 
