@@ -1,20 +1,18 @@
 import 'package:bookly_app/Features/home/domain/entites/book_entity.dart';
-import 'package:equatable/equatable.dart';
-
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
 class BookModel extends BookEntity{
-  final String? kind;
-  final String? id;
-  final String? etag;
-  final String? selfLink;
-  final VolumeInfo volumeInfo;
-  final SaleInfo? saleInfo;
-  final AccessInfo? accessInfo;
-  final SearchInfo? searchInfo;
+   String? kind;
+   String? id;
+   String? etag;
+   String? selfLink;
+   VolumeInfo ?volumeInfo;
+   SaleInfo? saleInfo;
+   AccessInfo? accessInfo;
+   SearchInfo? searchInfo;
 
    BookModel({
     this.kind,
@@ -25,7 +23,7 @@ class BookModel extends BookEntity{
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  }):super(bookId: id!,image: volumeInfo.imageLinks?.thumbnail??'',authorName: volumeInfo.authors?.first??'No Name',price:0.0,rating: volumeInfo.averageRating!,title: volumeInfo.title!);
+  }):super(bookId: id!,image: volumeInfo?.imageLinks?.thumbnail??'',authorName: volumeInfo?.authors?.first??'No Name',price:0.0,rating: volumeInfo!.averageRating,title: volumeInfo.title!);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
@@ -56,7 +54,6 @@ class BookModel extends BookEntity{
         'searchInfo': searchInfo?.toJson(),
       };
 
-  @override
   List<Object?> get props {
     return [
       kind,

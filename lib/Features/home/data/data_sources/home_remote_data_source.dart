@@ -10,7 +10,7 @@ import '../../domain/entites/book_entity.dart';
 // بيجيب ال Data بس
 abstract class HomeRemoteDataSource
 {
-  Future<List<BookEntity>>fetchFeaturedBooks();
+  Future<List<BookEntity>>fetchFeaturedBooks({int pageNumber=0});
   Future<List<BookEntity>>fetchNewsBooks();
 }
 
@@ -24,8 +24,8 @@ final ApiService apiService;
 
 
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() async {
-   var data= await apiService.get(endpoint: 'volumes?Filtering=free-ebooks&q=programming');
+  Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber=0}) async {
+   var data= await apiService.get(endpoint: 'volumes?Filtering=free-ebooks&q=programming&startIndex=${pageNumber*10}');
    List<BookEntity> books = getBooksList(data);
 
    // هنا خزنت الData اللى جتلك
