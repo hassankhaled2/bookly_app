@@ -28,6 +28,7 @@ class _FeaturedBooksListViewBlocConsumerState
         ScaffoldMessenger.of(context).showSnackBar(buildErrorSnackBar(state.errorMessage));
       }
     }, builder: (context, state) {
+      // return const FeaturedBooksListViewLoadingIndicator();
       if (state is FeaturedBooksSuccess ||
           state is FeaturedBooksPaginationLoading ||
           state is FeaturedBooksPaginationFailure) {
