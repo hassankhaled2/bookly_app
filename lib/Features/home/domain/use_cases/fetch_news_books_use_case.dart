@@ -7,7 +7,7 @@ import '../../../../core/use_cases/use_cases.dart';
 import '../entites/book_entity.dart';
 import '../repos/home_repo.dart';
 
-class FetchNewsBooksUseCase extends UseCase<List<BookEntity>,NoParam>
+class FetchNewsBooksUseCase extends UseCase<List<BookEntity>,int>
 {
   //ممكن تشيل class Noparam و تستخدم كلمه void
   final HomeRepo homeRepo;
@@ -15,9 +15,9 @@ class FetchNewsBooksUseCase extends UseCase<List<BookEntity>,NoParam>
   FetchNewsBooksUseCase(this.homeRepo);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> call([NoParam?param]) async {
+  Future<Either<Failure, List<BookEntity>>> call([int param=0]) async {
 
-    return await homeRepo.fetchNewsBooks();
+    return await homeRepo.fetchNewsBooks(pageNumber: param);
   }
 // FetchFeatureBooksUseCase(this.homeRepo);
 // Future<Either<Failure,List<BookEntity>>> call()

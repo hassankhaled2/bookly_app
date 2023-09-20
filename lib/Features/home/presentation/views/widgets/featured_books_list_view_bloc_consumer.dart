@@ -21,7 +21,7 @@ class _FeaturedBooksListViewBlocConsumerState
   Widget build(BuildContext context) {
     return BlocConsumer<FeaturedBooksCubit, FeaturedBooksState>(
         listener: (context, state) {
-      if (state is FeaturedBooksSuccess) {
+      if (state is FeatureBooksSuccess) {
         books.addAll(state.books);
       }
       if (state is FeaturedBooksPaginationFailure) {
@@ -29,7 +29,7 @@ class _FeaturedBooksListViewBlocConsumerState
       }
     }, builder: (context, state) {
       // return const FeaturedBooksListViewLoadingIndicator();
-      if (state is FeaturedBooksSuccess ||
+      if (state is FeatureBooksSuccess ||
           state is FeaturedBooksPaginationLoading ||
           state is FeaturedBooksPaginationFailure) {
         return FeaturedBooksListView(

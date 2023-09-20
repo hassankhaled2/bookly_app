@@ -41,16 +41,16 @@ class HomeRepoImpl extends HomeRepo
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewsBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchNewsBooks({int pageNumber=0}) async {
     try
     {
       List<BookEntity> booksList;
-       booksList= homeLocalDataSource.fetchNewsBooks();
+       booksList= homeLocalDataSource.fetchNewsBooks(pageNumber: pageNumber);
       if(booksList.isNotEmpty)
       {
         return right(booksList);
       }
-       booksList =await homeRemoteDataSource.fetchNewsBooks();
+       booksList =await homeRemoteDataSource.fetchNewsBooks(pageNumber:pageNumber);
       return right(booksList);
     } catch(e)
     {
@@ -66,5 +66,7 @@ class HomeRepoImpl extends HomeRepo
       );
     }
   }
+
+
 
 }

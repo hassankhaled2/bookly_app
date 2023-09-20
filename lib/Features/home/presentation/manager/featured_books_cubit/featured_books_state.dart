@@ -18,8 +18,8 @@ class FeaturedBooksFailure extends FeaturedBooksState
 
   FeaturedBooksFailure(this.errorMessage);
 }
-class FeaturedBooksSuccess extends FeaturedBooksState
+class FeatureBooksSuccess extends FeaturedBooksState
 {
   final List<BookEntity>books;
-  FeaturedBooksSuccess(this.books);
+  FeatureBooksSuccess(this.books);
 }
