@@ -54,7 +54,7 @@ class _BestSellerListViewState extends State<BestSellerListView> {
     return ListView.builder(
         controller: _scrollController,
         itemCount: widget.books.length,
-        physics: const PageScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return Padding(
