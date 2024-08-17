@@ -1,10 +1,9 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'best_seller_list_view.dart';
-import 'best_seller_list_view_bloc_consumer.dart';
-import 'custom_app_bar.dart';
-import 'featured_books_list_view_bloc_consumer.dart';
+import '../../../../../../core/widgets/custom_app_bar.dart';
+import 'feature_book_widgets/featured_books_list_view_bloc_consumer.dart';
+import 'best_seller_widgets/best_seller_list_view_bloc_consumer.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -12,6 +11,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(

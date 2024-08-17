@@ -1,12 +1,13 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.backgroundColor, required this.TextColor, this.borderRadius, required this.text,  this.fontSize}) : super(key: key);
+  const CustomButton({Key? key, required this.backgroundColor, required this.TextColor, this.borderRadius, required this.text,  this.fontSize, this.onPressed}) : super(key: key);
 final Color backgroundColor;
 final  String  text;
 final Color TextColor;
 final BorderRadius?borderRadius;
 final double ?fontSize;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,7 +22,7 @@ final double ?fontSize;
             )
           )
         ),
-        child: Text(text,style:Styles.textStyle18.copyWith(color:TextColor ,fontWeight: FontWeight.w900,fontSize: fontSize),),
+        child: TextButton(onPressed:onPressed, child: Text(text,style:Styles.textStyle18.copyWith(color:TextColor ,fontWeight: FontWeight.w900,fontSize: fontSize)),),
       ),
     );
   }

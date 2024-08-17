@@ -5,7 +5,7 @@ import 'package:bookly_app/Features/home/presentation/manager/newest_books_cubit
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utils/Functions/buildErrorSnackBar.dart';
+import '../../../../../../../core/utils/Functions/buildErrorSnackBar.dart';
 import 'best_seller_list_view.dart';
 
 class BestSellerListViewBlocConsumer extends StatefulWidget {

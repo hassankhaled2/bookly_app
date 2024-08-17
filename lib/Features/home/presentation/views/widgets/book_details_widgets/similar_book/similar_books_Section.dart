@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../../../core/utils/styles.dart';
 
 class SimilarBooksSections extends StatelessWidget {
   const SimilarBooksSections({Key? key}) : super(key: key);

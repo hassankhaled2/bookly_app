@@ -1,8 +1,11 @@
 import 'package:bookly_app/Features/Splash/presentation/views/widget/sliding_text.dart';
+import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/AssetsData.dart';
 
 
 class SplashViewBody extends StatefulWidget {
@@ -52,7 +55,8 @@ void dispose()
 
     Future.delayed(const Duration(seconds: 2),()
     {
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      // GoRouter.of(context).push(AppRouter.kHomeView);
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeView()));
       // Get.to(()=>const HomeView(),transition:Transition.fade,duration: KTranstionDuration);
     });
   }

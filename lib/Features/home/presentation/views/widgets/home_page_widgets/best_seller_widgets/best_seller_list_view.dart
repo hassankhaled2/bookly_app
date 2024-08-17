@@ -52,9 +52,10 @@ class _BestSellerListViewState extends State<BestSellerListView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+
         controller: _scrollController,
         itemCount: widget.books.length,
-        physics: const BouncingScrollPhysics(),
+         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return Padding(
@@ -64,6 +65,8 @@ class _BestSellerListViewState extends State<BestSellerListView> {
               title: widget.books[index].title,
               authorName: widget.books[index].authorName ?? '',
               rating: widget.books[index].rating ?? 4.2,
+              preview:widget.books[index].previewLink ?? 'http://books.google.com.eg/books?' ,
+              // preview:widget.books[index].previewLink ??'ggg' ,
             ),
           );
         }

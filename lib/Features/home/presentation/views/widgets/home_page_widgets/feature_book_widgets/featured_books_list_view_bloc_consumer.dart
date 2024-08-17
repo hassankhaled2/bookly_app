@@ -3,7 +3,7 @@ import 'package:bookly_app/Features/home/presentation/manager/featured_books_cub
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utils/Functions/buildErrorSnackBar.dart';
+import '../../../../../../../core/utils/Functions/buildErrorSnackBar.dart';
 import 'featured_list_view.dart';
 
 class FeaturedBooksListViewBlocConsumer extends StatefulWidget {
