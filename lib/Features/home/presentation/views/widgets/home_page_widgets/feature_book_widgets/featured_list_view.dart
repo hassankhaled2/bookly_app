@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,10 +63,16 @@ void dispose()
           itemBuilder: (context,index)
           {
 
-            return Padding(
+            return InkWell(
+              onTap: ()
+              {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_)=>BookDetailsViews(image: widget.books[index].image??'', preview:widget.books[index].previewLink??'' , bookName:widget.books[index].title??'' , authorName:widget.books[index].authorName??'', rating: widget.books[index].rating??4.2)));
+              },
+              child: Padding(
 
-              padding:  const EdgeInsets.symmetric(horizontal: 5),
-              child:  CustomBookImage(image: widget.books[index].image??'',),
+                padding:  const EdgeInsets.symmetric(horizontal: 5),
+                child:  CustomBookImage(image: widget.books[index].image??'',),
+              ),
             );
           }),
 
