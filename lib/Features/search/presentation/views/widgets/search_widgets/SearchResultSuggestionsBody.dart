@@ -1,7 +1,7 @@
 import 'package:bookly_app/Features/home/domain/entites/book_entity.dart';
 import 'package:flutter/material.dart';
 
-import '../best_seller_widgets/best_seller_list_view_item.dart';
+import '../../../../../home/presentation/views/widgets/home_page_widgets/best_seller_widgets/best_seller_list_view_item.dart';
 
 
 
@@ -18,7 +18,7 @@ class SearchResultSuggestionsBody extends StatelessWidget {
         itemBuilder:(context,index)
         {
           return BookListViewItem(
-            title:article[index].title??'' ,image:article[index].image??'' ,rating:article[index].rating??4.2 ,authorName:article[index].authorName??'',preview:article[index].previewLink??'',
+            title:listItem[index].title??'' ,image:listItem[index].image??'' ,rating:listItem[index].rating??4.2 ,authorName:listItem[index].authorName??'',preview:listItem[index].previewLink??'',
           );
         }
     );

@@ -1,11 +1,9 @@
-import 'package:bookly_app/Features/search/presentation/views/search_view.dart';
-import 'package:bookly_app/core/utils/app_router.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../Features/home/presentation/views/widgets/home_page_widgets/search_widgets/test3.dart';
+
+import '../../Features/search/presentation/views/widgets/search_widgets/SearchBlocBuilder.dart';
 import '../utils/AssetsData.dart';
 
 

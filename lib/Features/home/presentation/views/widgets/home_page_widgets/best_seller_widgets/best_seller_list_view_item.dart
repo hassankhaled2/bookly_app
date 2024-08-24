@@ -17,6 +17,10 @@ final String preview;
   @override
   Widget build(BuildContext context) {
     print('-------------------------------------$preview');
+    // const defaultImageUrl = 'https://img.freepik.com/free-vector/abstract-monocolor-winter-book-cover_23-2148801464.jpg?t=st=1724542469~exp=1724546069~hmac=06fc94dd20bd80a4c9e925e6effa31271611695b0c64978a50372204a5498dd5&w=740';
+    //
+    // // Ensure image URL is valid
+    // final imageUrl = image.isNotEmpty ? image : defaultImageUrl;
     return GestureDetector(
       onTap: ()
       {
@@ -35,7 +39,7 @@ final String preview;
               aspectRatio: 2.5/4,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                  child: CachedNetworkImage(imageUrl: image,fit:BoxFit.fill,))
+                  child: CachedNetworkImage(imageUrl:image ,fit:BoxFit.fill, ))
               // Container(
               //   decoration: BoxDecoration(
               //       borderRadius: BorderRadius.circular(8),

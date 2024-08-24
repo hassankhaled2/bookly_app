@@ -66,7 +66,7 @@ void dispose()
             return InkWell(
               onTap: ()
               {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_)=>BookDetailsViews(image: widget.books[index].image??'', preview:widget.books[index].previewLink??'' , bookName:widget.books[index].title??'' , authorName:widget.books[index].authorName??'', rating: widget.books[index].rating??4.2)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (_)=>BookDetailsViews(image: widget.books[index].image??'assets/images/default_image.png', preview:widget.books[index].previewLink??'' , bookName:widget.books[index].title??'' , authorName:widget.books[index].authorName??'', rating: widget.books[index].rating??4.2)));
               },
               child: Padding(
 

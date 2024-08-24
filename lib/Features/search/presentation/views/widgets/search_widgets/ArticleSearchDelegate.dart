@@ -1,9 +1,9 @@
 
 import 'package:bookly_app/Features/home/domain/entites/book_entity.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/home_page_widgets/search_widgets/test.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../constants.dart';
+import 'SearchResultSuggestionsBody.dart';
 
 
 class ArticleSearchDelegate extends SearchDelegate
