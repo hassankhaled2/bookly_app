@@ -1,9 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_details_widgets/similar_book/similar_books_Section.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/book_details_widgets/similar_book/similar_books_list_view.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/book_details_widgets/similar_book_bloc_builder/simi;ar_book_bloc_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../manager/featured_books_cubit/featured_books_cubit.dart';
 import 'books_details_section.dart';
 import 'custom_book_details_app_bar.dart';
 
