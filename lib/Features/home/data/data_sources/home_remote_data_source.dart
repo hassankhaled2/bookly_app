@@ -7,7 +7,7 @@ import 'package:hive/hive.dart';
 import '../../../../constants.dart';
 import '../../../../core/errors/failures.dart';
 import '../../domain/entites/book_entity.dart';
-// بيجيب ال Data بس
+ // بيجيب ال Data بس مش مهمته ان يقولى الييانات جت بشكل سليم ولا لا
 abstract class HomeRemoteDataSource
 {
   Future<List<BookEntity>>fetchFeaturedBooks({int pageNumber=0});
@@ -51,6 +51,8 @@ final ApiService apiService;
   List<BookEntity> books =[];
   for(var bookMap in data['items'])
   {
+    // BookModel book =BookModel.fromJson(bookMap);
+    // books.add(book);
     books.add(BookModel.fromJson(bookMap));
   }
   return books;

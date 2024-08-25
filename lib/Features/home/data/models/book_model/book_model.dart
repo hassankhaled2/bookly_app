@@ -5,16 +5,18 @@ import 'search_info.dart';
 import 'volume_info.dart';
 
 class BookModel extends BookEntity{
+
    String? kind;
    String? id;
    String? etag;
    String? selfLink;
-   VolumeInfo ?volumeInfo;
+   VolumeInfo volumeInfo;
    SaleInfo? saleInfo;
    AccessInfo? accessInfo;
    SearchInfo? searchInfo;
 
    BookModel({
+
     this.kind,
     this.id,
     this.etag,
@@ -23,15 +25,18 @@ class BookModel extends BookEntity{
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  }):super(bookId: id!,image: volumeInfo?.imageLinks?.thumbnail??'',authorName: volumeInfo?.authors?.first??'No Name',price:0.0,rating: volumeInfo!.averageRating,title: volumeInfo.title!);
+  }
+  ):super(bookId: id!,image: volumeInfo.imageLinks?.thumbnail??'',authorName: volumeInfo.authors?.first??'No Name',price:0.0,rating: volumeInfo.averageRating,title: volumeInfo.title!,previewLink: volumeInfo.previewLink)
+   {
+     print('BookModel initialized with previewLink: ${volumeInfo.previewLink}');
 
+   }
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
         id: json['id'] as String?,
         etag: json['etag'] as String?,
         selfLink: json['selfLink'] as String?,
-        volumeInfo:
-            VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
+        volumeInfo: VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
         saleInfo: json['saleInfo'] == null
             ? null
             : SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
@@ -41,6 +46,7 @@ class BookModel extends BookEntity{
         searchInfo: json['searchInfo'] == null
             ? null
             : SearchInfo.fromJson(json['searchInfo'] as Map<String, dynamic>),
+           // previewLenk:json['volumeInfo']['previewLink'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -48,10 +54,11 @@ class BookModel extends BookEntity{
         'id': id,
         'etag': etag,
         'selfLink': selfLink,
-        'volumeInfo': volumeInfo?.toJson(),
+        'volumeInfo': volumeInfo.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
+        // 'previewLink': volumeInfo?.toJson(),
       };
 
   List<Object?> get props {

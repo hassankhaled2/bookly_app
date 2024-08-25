@@ -23,8 +23,7 @@ static const textStyle30 =TextStyle(
         fontWeight: FontWeight.w900,
         fontFamily: KGTSectraFine
     );
-
-    static const textStyle16 =TextStyle(
+static const textStyle16 =TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500
         ,

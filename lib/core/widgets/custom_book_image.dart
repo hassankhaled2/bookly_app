@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,8 @@ final String image;
     return AspectRatio(
       aspectRatio: 3/4,
       child: ClipRRect(borderRadius:BorderRadius.circular(16),
-          child: CachedNetworkImage(imageUrl: image,fit:BoxFit.fill,)),
+          child: CachedNetworkImage(imageUrl: image,fit:BoxFit.fill,)
+      ),
 
     );
   }

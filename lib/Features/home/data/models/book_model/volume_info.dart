@@ -24,7 +24,7 @@ class VolumeInfo extends Equatable {
   final PanelizationSummary? panelizationSummary;
   final ImageLinks? imageLinks;
   final String? language;
-  final String? previewLink;
+  final String  previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
 
@@ -47,7 +47,7 @@ class VolumeInfo extends Equatable {
     this.panelizationSummary,
     required this.imageLinks,
     this.language,
-    this.previewLink,
+    required this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
   });
@@ -81,7 +81,7 @@ class VolumeInfo extends Equatable {
             ? null
             : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
-        previewLink: json['previewLink'] as String?,
+        previewLink: json['previewLink'] as String,
         infoLink: json['infoLink'] as String?,
         canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
       );
